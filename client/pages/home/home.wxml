@@ -1,0 +1,19 @@
+<!--pages/home/home.wxml-->
+<view class='movie-wrapper'>
+  <image class='movie-image' src='{{movie.image}}' mode='aspectFit' bindtap='onTapMovie' data-id='{{movie.id}}'></image>
+  <view class='movie-name'>{{movie.title}}</view>
+  <view class='review-wrapper' bindtap='onTapReview' data-id='{{movie.id}}'>
+    <image class='review-avatar' src='{{comment.avatar}}'></image>
+    <view class='review-text'>{{comment.username}}向你推荐了一部电影</view>
+  </view>
+</view>
+<view class='btn-wrapper'>
+  <button class='btn' bindtap='onTapHot'>
+    <image class='btn-icon' src='/images/hot.png'></image>
+    <view class='btn-text'>热门</view>
+  </button>
+  <button class='btn' bindtap='onTapMine'>
+    <image class='btn-icon' src='/images/mine.png'></image>
+    <view class='btn-text'>我的</view>
+  </button>
+</view>

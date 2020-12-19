@@ -1,0 +1,63 @@
+/* pages/movie-detail/movie-detail.wxss */
+
+page{
+  display: block;
+  min-height: 100%;
+  background-color: #F6F9FC;
+}
+.wrapper-wrapper{
+  position: relative;
+}
+.wrapper{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 670rpx;
+  height: 1020rpx;
+  margin: 90rpx 40rpx 50rpx;
+  background-color: white;
+}
+.title{
+  font-weight: 900;
+  font-size: 37rpx;
+  margin: 320rpx 0 0;
+}
+.description{
+  font-size: 30rpx;
+  color: #5A5B5B;
+  margin-top: 30rpx; 
+  height: 450rpx;
+  width: 550rpx;
+}
+.btn-wrapper{
+  display: flex;
+  position: absolute;
+  top: 900rpx;
+}
+.space{
+  width: 50rpx
+}
+.btn{
+  display: flex;
+  width: 250rpx;
+  height: 70rpx;
+}
+.btn-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+  margin-top: 12rpx;
+}
+.btn-text{
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+.image{
+  position: absolute;
+  top: 0rpx;
+  height: 350rpx;
+  margin-top: 40rpx;
+  width: 100%;
+}

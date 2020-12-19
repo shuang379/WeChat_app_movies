@@ -1,0 +1,43 @@
+<view class='unlogin-wrapper' wx:if = '{{!userInfo}}'>
+    <view class='unlogin-card'>
+      <view class='unlogin-head'></view>
+      <view class='unlogin-info'>
+        <view class='unlogin-text'>未登录</view>
+        <view class='unlogin-tips'>点击微信登录后查看个人账户</view>
+      </view>
+    </view>
+    <button wx:if='{{locationAuthType==0}}' class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
+    <button wx:if='{{locationAuthType==1}}' class='unlogin-btn' open-type='openSetting' bindgetuserinfo='onTapLogin'>授权登录</button> 
+</view>
+
+<view class='login-wrapper' wx:else>
+  <view class='tab-wrapper'>
+    <view class="{{tab_selected == item? 'highlighted-tab': 'tabs'}}" wx:for='{{tabMap}}' data-tab='{{item}}' bindtap='changeTab'>{{index}}</view>
+  </view>
+
+  <view class='comment-card' wx:for='{{archiveMeta}}' bindtap='onTapArchive' wx:for-index='idx' data-idx='{{idx}}' wx:if="{{tab_selected=='sc'}}">
+    <image class='movie-image' src='{{item.image}}' mode='scaleToFill'></image>
+    <view class='movie-meta'>
+      <view class='movie-title'>{{item.title}}</view>
+      <view class='comment'>{{item.content}}</view>
+      <view class='user-meta'>
+        <image class='avatar' src='{{item.avatar}}'></image>
+        <view class='username'>{{item.username}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='comment-card' wx:for='{{myCommentMeta}}' bindtap='onTapMine' wx:for-index='idx' data-idx='{{idx}}' wx:if="{{tab_selected=='fb'}}">
+    <image class='movie-image' src='{{item.image}}' mode='scaleToFill'></image>
+    <view class='movie-meta'>
+      <view class='movie-title'>{{item.title}}</view>
+      <view class='comment'>{{item.comment_content}}</view>
+      <view class='user-meta'>
+        <image class='avatar' src='{{item.avatar}}'></image>
+        <view class='username'>{{item.username}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<navigator class='btn' url='/pages/home/home'>回到首页</navigator>

@@ -1,0 +1,38 @@
+<!--pages/movie-detail/movie-detail.wxml-->
+<view class='unlogin-wrapper' wx:if = '{{!userInfo}}'>
+    <view class='unlogin-card'>
+      <view class='unlogin-head'></view>
+      <view class='unlogin-info'>
+        <view class='unlogin-text'>未登录</view>
+        <view class='unlogin-tips'>点击微信登录后查看个人账户</view>
+      </view>
+    </view>
+    <button wx:if='{{locationAuthType==0}}' class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
+    <button wx:if='{{locationAuthType==1}}' class='unlogin-btn' open-type='openSetting' bindgetuserinfo='onTapLogin'>授权登录</button> 
+</view>
+
+<view class='wrapper-wrapper' wx:else>
+  <view class='wrapper'>
+    <view class='title'>{{movie.title}}</view>
+    <scroll-view scroll-y='true' class='description'>{{movie.description}}</scroll-view>
+    <view class='btn-wrapper'>
+      <button class='btn' bindtap='onTapReview' data-id='{{movie.id}}' data-title='{{movie.title}}' data-image='{{movie.image}}'>
+        <image class='btn-icon' src='/images/check.png'></image>
+        <view class='btn-text'>查看影评</view>
+      </button>
+      <view class='space'></view>
+      <button class='btn' wx:if='{{!myComment}}' bindtap='openActionSheet' data-id='{{movie.id}}' data-title='{{movie.title}}' data-image='{{movie.image}}'>
+        <image class='btn-icon' src='/images/add.png'></image>
+        <view class='btn-text'>添加影评</view>
+      </button>
+      <button class='btn' wx:if='{{myComment}}' bindtap='onTapComment' data-id='{{movie.id}}' data-title='{{movie.title}}' data-image='{{movie.image}}'>
+        <image class='btn-icon' src='/images/add.png'></image>
+        <view class='btn-text'>添加影评</view>
+      </button>
+    </view>
+  </view>
+  <image class='image' src='{{movie.image}}' mode='aspectFit'></image>
+</view>
+
+
+

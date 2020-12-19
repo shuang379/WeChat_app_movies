@@ -1,0 +1,31 @@
+<!--pages/preview-comment/preview-comment.wxml-->
+
+<view class='wrapper-wrapper'>
+  <view class='wrapper'>
+    <view class='title'>{{movie.title}}</view>
+    <view class='btn-wrapper'>
+      <button class='btn' bindtap='onTapRedo'>
+        <image class='btn-icon' src='/images/redo.png'></image>
+        <view class='btn-text'>重新编辑</view>
+      </button>
+      <view class='space'></view>
+      <button class='btn' bindtap='onTapTextRelease' wx:if='{{comment_type==1}}'>
+        <image class='btn-icon' src='/images/release.png'></image>
+        <view class='btn-text'>发布影评</view>
+      </button>
+      <button class='btn' bindtap='onTapAudioRelease' wx:if='{{comment_type==2}}'>
+        <image class='btn-icon' src='/images/release.png'></image>
+        <view class='btn-text'>发布影评</view>
+      </button>
+    </view>
+  </view>
+  <view class='comment-wrapper'>
+    <view class='user-info'>
+      <image class='avatar' src='{{userInfo.avatarUrl}}'></image>
+      <view class='user-text'>{{userInfo.nickName}}的影评</view>
+    </view>
+    <scroll-view scroll-y='true' class='comment' wx:if='{{comment_type==1}}'>{{content}}</scroll-view>
+    <button class='audio_comment' wx:if='{{comment_type==2}}' bindtap='onTapAudio'>>> {{audio_duration}}s</button>
+    </view>
+  <image class='image' src='{{movie.image}}' mode='aspectFit'></image>
+</view>

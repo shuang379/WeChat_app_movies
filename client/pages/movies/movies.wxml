@@ -1,0 +1,9 @@
+<view class='login-wrapper'>
+  <view class='movie-card' wx:for='{{movieList}}' wx:key='id' bindtap='onTapMovie' data-id='{{item.id}}'>
+    <image class='movie-image' src='{{item.image}}' mode='scaleToFill'></image>
+    <view class='movie-meta'>
+      <view class='movie-title'>{{item.title}}</view>
+      <view class='movie-category'>类型：{{item.category}}</view>
+    </view>
+  </view>
+</view>

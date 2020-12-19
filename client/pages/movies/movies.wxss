@@ -1,0 +1,44 @@
+/* pages/movies/movies.wxss */
+.btn{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0rpx;
+  width: 750rpx;
+  height: 120rpx;
+  font-size: 32rpx;
+  color: #838484;
+  background-color: #fff;
+}
+.login-wrapper{
+  background-color: #F6F9FC;
+  height: 1200rpx;
+  padding-top: 10rpx;
+  padding-left: 35rpx;
+}
+.movie-card{
+  display: flex;
+  height: 250rpx;
+  width: 680rpx;
+  margin-top: 45rpx;
+  background-color: white;
+}
+.movie-image{
+  width: 190rpx;
+  height: 250rpx;
+}
+.movie-meta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+.movie-title{
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+.movie-category{
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}

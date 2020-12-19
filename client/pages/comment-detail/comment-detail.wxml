@@ -1,0 +1,43 @@
+<!--pages/comment-detail/comment-detail.wxml-->
+<view class='unlogin-wrapper' wx:if = '{{!userInfo}}'>
+    <view class='unlogin-card'>
+      <view class='unlogin-head'></view>
+      <view class='unlogin-info'>
+        <view class='unlogin-text'>未登录</view>
+        <view class='unlogin-tips'>点击微信登录后查看影评详情</view>
+      </view>
+    </view>
+    <button wx:if='{{locationAuthType==0}}' class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
+    <button wx:if='{{locationAuthType==1}}' class='unlogin-btn' open-type='openSetting' bindgetuserinfo='onTapLogin'>授权登录</button> 
+    <navigator class='btn-back' url='/pages/home/home'>回到首页</navigator>
+</view>
+
+<view class='wrapper-wrapper' wx:else>
+  <view class='wrapper'>
+    <view class='title'>{{movie.title}}</view>
+    <view class='btn-wrapper'>
+      <button class='btn' bindtap='onTapArchive'>
+        <image class='btn-icon' src='/images/save.png'></image>
+        <view class='btn-text'>收藏影评</view>
+      </button>
+      <view class='space'></view>
+      <button class='btn' wx:if='{{!myComment}}' bindtap='openActionSheet' data-title='{{movie.title}}' data-image='{{movie.image}}'>
+        <image class='btn-icon' src='/images/write.png'></image>
+        <view class='btn-text'>写影评</view>
+      </button>
+      <button class='btn' wx:if='{{myComment}}' bindtap='onTapComment'>
+        <image class='btn-icon' src='/images/write.png'></image>
+        <view class='btn-text'>写影评</view>
+      </button>
+    </view>
+  </view>
+  <view class='comment-wrapper'>
+    <view class='user-info'>
+      <image class='avatar' src='{{comment.avatar}}'></image>
+      <view class='user-text'>{{comment.username}}的影评</view>
+    </view>
+    <scroll-view wx:if='{{comment_type==1}}' scroll-y='true' class='comment'>{{comment.comment_content}}</scroll-view>
+    <button class='audio_comment' wx:if='{{comment_type==2}}' bindtap='onTapAudio'>>> {{audio_duration}}s</button>
+    </view>
+  <image class='image' src='{{movie.image}}' mode='aspectFit'></image>
+</view>

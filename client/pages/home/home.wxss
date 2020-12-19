@@ -1,0 +1,61 @@
+/* pages/home/home.wxss */
+
+.movie-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: #F6F9FC;
+  padding-bottom: 100rpx;
+}
+.movie-image{
+  margin-top: 35rpx;
+  height: 800rpx;
+}
+.movie-name{
+  font-size: 38rpx;
+  line-height: 53rpx;
+  margin-top: 30rpx;
+  font-weight: bolder;
+  color: #5A5B5B;
+}
+.review-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 15rpx;
+}
+.review-avatar{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+.review-text{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  font-weight: bold;
+  color: #838484;
+}
+.btn-wrapper{
+  display: flex;
+  background-color: #fff;
+  width: 750rpx;
+  height: 120rpx;
+}
+.btn{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+}
+.btn::after{border: none}
+.btn-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.btn-text{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #838484;
+}

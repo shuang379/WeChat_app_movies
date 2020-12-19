@@ -1,0 +1,20 @@
+<!--pages/comments/comments.wxml-->
+<view class='background'>
+  <scroll-view scroll-y='true' class='comment-area' wx:if='{{commentList.length > 0}}'>
+    <view wx:for='{{commentList}}' wx:key='id' class='comment-card' bindtap='onTapReview' data-username='{{item.username}}' data-avatar='{{item.avatar}}' data-content='{{item.content}}' data-comment_id='{{item.id}}'>
+      <view class='user-info'>
+        <image class='avatar' src='{{item.avatar}}'></image>
+        <view class='user'>{{item.username}}</view>
+      </view>
+      <view wx:if='{{item.comment_type==1}}' class='comment'>{{item.content}}</view>
+      <button class='audio_comment' wx:if='{{item.comment_type==2}}'>>> {{item.audio_duration}}s</button>
+    </view>
+  </scroll-view>
+  
+  <view class='comment-empty' wx:else>
+    <image class='empty-image' src='/images/smile.png'></image>
+    <view class='empty-text'>暂时没有评论</view>
+  </view>
+</view>
+
+<navigator class='btn' url='/pages/home/home'>回到首页</navigator>

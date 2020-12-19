@@ -1,0 +1,33 @@
+<!--pages/edit-comment/edit-comment.wxml-->
+<view class='wrapper-wrapper'>
+  <view class='wrapper'>
+    <view class='title'>{{movie.title}}</view>
+    <!-- 用户点击文字评论，显示输入框 -->
+    <view wx:if='{{tapIndex==0}}'>
+      <textarea class='input' placeholder='输入你的影评内容...' bindinput="inputContent"></textarea>
+      <button class='btn-bottom' bindtap='onTapTextDone'>完成</button>
+    </view>
+  </view>
+  <!-- 用户点击语音评论，显示录音按钮 -->
+  <view wx:if='{{tapIndex==1}}'>
+    <button wx:if='{{buttonStatus==1}}' class='btn' bindtap='onTapStart'>
+      <image class='btn-icon' src='/images/record.png'></image>
+      <view class='btn-text'>开始录音</view>
+    </button>
+    <button wx:if='{{buttonStatus==2}}' class='btn' bindtap='onTapStop'>
+      <image class='btn-icon' src='/images/record.png'></image>
+      <view class='btn-text'>结束录音</view>
+    </button>
+    <button wx:if='{{buttonStatus==3}}' class='btn' bindtap='onTapPlay'>
+      <image class='btn-icon' src='/images/record.png'></image>
+      <view class='btn-text'>播放录音</view>
+    </button>
+    <button wx:if='{{buttonStatus==4}}' class='btn' bindtap='onTapStart'>
+      <image class='btn-icon' src='/images/record.png'></image>
+      <view class='btn-text'>重新录音</view>
+    </button>
+    <button class='btn-bottom' bindtap='onTapRecordDone'>完成</button>
+  </view>
+  
+  <image class='image' src='{{movie.image}}' mode='aspectFit'></image>
+</view>

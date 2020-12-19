@@ -1,0 +1,63 @@
+/* pages/edit-comment/edit-comment.wxss */
+page{
+  display: block;
+  min-height: 100%;
+  background-color: #F6F9FC;
+}
+.wrapper-wrapper{
+  position: relative;
+}
+.wrapper{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 670rpx;
+  height: 950rpx;
+  margin: 90rpx 40rpx 50rpx;
+  background-color: white;
+}
+.title{
+  font-weight: 900;
+  font-size: 37rpx;
+  margin: 320rpx 0 0;
+}
+.btn{
+  display: flex;
+  width: 240rpx;
+  height: 70rpx;
+  top: 850rpx;
+  align-items: center;
+}
+.btn-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+  margin-top: 6rpx;
+}
+.btn-text{
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+.image{
+  position: absolute;
+  top: 0rpx;
+  height: 350rpx;
+  margin-top: 40rpx;
+}
+.input{
+  width: 300rpx;
+  margin-top: 40rpx;
+  font-size: 35rpx;
+}
+.btn-bottom{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 90rpx;
+  font-size: 35rpx;
+  color: #F1F3F3;
+  background-color: #1DB505;
+}
